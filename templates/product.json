@@ -257,7 +257,7 @@
                 "dividers": true,
                 "type_preset": "h6",
                 "inherit_color_scheme": true,
-                "color_scheme": "scheme-1",
+                "color_scheme": "",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -272,8 +272,8 @@
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Return policy",
-                    "open_by_default": true,
-                    "icon": "none",
+                    "open_by_default": false,
+                    "icon": "arrow",
                     "width": 20
                   },
                   "blocks": {
