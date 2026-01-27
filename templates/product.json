@@ -247,17 +247,17 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["quantity", "add-to-cart", "accelerated-checkout"]
+              "block_order": []
             },
-            "accordion_MDmJ6K": {
+            "accordion_agaN3i": {
               "type": "accordion",
-              "name": "Product Information",
+              "name": "t:names.accordion",
               "settings": {
                 "icon": "caret",
                 "dividers": true,
                 "type_preset": "h6",
-                "inherit_color_scheme": false,
-                "color_scheme": "scheme-2",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -268,7 +268,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "accordion_row_1": {
+                "accordion_row_kJN8yz": {
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Return policy",
@@ -277,7 +277,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_1": {
+                    "text_UPHTNy": {
                       "type": "text",
                       "settings": {
                         "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
@@ -303,9 +303,11 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": ["text_1"]
+                  "block_order": [
+                    "text_UPHTNy"
+                  ]
                 },
-                "accordion_row_2": {
+                "accordion_row_Bt7a6B": {
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Shipping",
@@ -314,7 +316,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_2": {
+                    "text_zq63MH": {
                       "type": "text",
                       "settings": {
                         "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
@@ -340,9 +342,11 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": ["text_2"]
+                  "block_order": [
+                    "text_zq63MH"
+                  ]
                 },
-                "accordion_row_3": {
+                "accordion_row_yB8Mza": {
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Manufacturing",
@@ -351,7 +355,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_3": {
+                    "text_zJMCN9": {
                       "type": "text",
                       "settings": {
                         "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
@@ -377,47 +381,16 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": ["text_3"]
-                },
-                "accordion_row_4": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "When will I get my order?",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_4": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": ["text_4"]
+                  "block_order": [
+                    "text_zJMCN9"
+                  ]
                 }
               },
-              "block_order": ["accordion_row_1", "accordion_row_2", "accordion_row_3", "accordion_row_4"]
+              "block_order": [
+                "accordion_row_kJN8yz",
+                "accordion_row_Bt7a6B",
+                "accordion_row_yB8Mza"
+              ]
             },
             "dnd_product_specs_product_specs_LzHXF6": {
               "type": "shopify://apps/dnd-product-specs/blocks/product_specs/1dd2dcf1-0558-425e-ab46-1bc96d40c5a7",
@@ -446,7 +419,7 @@
             "variant_picker_R3rGDr",
             "divider_VJhene",
             "buy_buttons_eYQEYi",
-            "accordion_MDmJ6K",
+            "accordion_agaN3i",
             "dnd_product_specs_product_specs_LzHXF6"
           ]
         }
