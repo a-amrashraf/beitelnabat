@@ -6,6 +6,9 @@
 ></script>
 
 {% liquid
+  assign current_product = section.settings.product | default: product
+  assign max_products = section.settings.max_products
+
   case section.settings.layout_type
     when 'grid'
       assign classes = 'resource-list--grid'
@@ -23,106 +26,80 @@
     echo '--column-count: ' | append: section.settings.columns | append: ';'
     echo '--column-count-mobile: ' | append: section.settings.mobile_columns | append: ';'
   endcapture
-
-  # Get the current product
-  assign current_product = section.settings.product | default: product
-  
-  # Get matching products based on tags
-  assign matching_products = blank
-  assign products_found = 0
-  assign max_products = section.settings.max_products
-  
-  # Create array to store matching products
-  assign matched_products = '' | split: ','
-  
-  # Loop through current product tags to find matching products
-  if current_product.tags.size > 0
-    for collection in collections
-      for collection_product in collection.products limit: 50
-        if collection_product.id != current_product.id and products_found < max_products
-          # Check if this product shares any tags with current product
-          assign has_matching_tag = false
-          for product_tag in collection_product.tags
-            if current_product.tags contains product_tag
-              assign has_matching_tag = true
-              break
-            endif
-          endfor
-          
-          if has_matching_tag
-            # Check if we already added this product
-            assign already_added = false
-            for matched in matched_products
-              if matched.id == collection_product.id
-                assign already_added = true
-                break
-              endif
-            endfor
-            
-            unless already_added
-              assign matched_products = matched_products | concat: collection_product
-              assign products_found = products_found | plus: 1
-            endunless
-          endif
-        endif
-      endfor
-      
-      if products_found >= max_products
-        break
-      endif
-    endfor
-  endif
 %}
 
-{% if matched_products.size > 0 %}
+<div
+  id="product-recommendations-by-tag-{{ section.id }}"
+  class="product-recommendations-by-tag"
+  data-section-id="{{ section.id }}"
+  data-testid="product-recommendations-by-tag-section"
+  {{ section.shopify_attributes }}
+>
+  <div class="section-background color-{{ section.settings.color_scheme }}"></div>
   <div
-    id="product-recommendations-by-tag-{{ section.id }}"
-    class="product-recommendations-by-tag"
-    data-section-id="{{ section.id }}"
-    data-testid="product-recommendations-by-tag-section"
-    {{ section.shopify_attributes }}
+    class="
+      section
+      section--{{ section.settings.section_width }}
+      color-{{ section.settings.color_scheme }}
+      section-resource-list
+      spacing-style
+      gap-style
+    "
+    style="
+      {%  render 'spacing-style', settings: section.settings %}
+      --gap: {{ section.settings.gap }}px;
+    "
   >
-    <div class="section-background color-{{ section.settings.color_scheme }}"></div>
-    <div
-      class="
-        section
-        section--{{ section.settings.section_width }}
-        color-{{ section.settings.color_scheme }}
-        section-resource-list
-        spacing-style
-        gap-style
-      "
-      style="
-        {%  render 'spacing-style', settings: section.settings %}
-        --gap: {{ section.settings.gap }}px;
-      "
-    >
-      {% if section.settings.enable_section_background %}
-        <div class="section-background"></div>
-      {% endif %}
+    {% if section.settings.enable_section_background %}
+      <div class="section-background"></div>
+    {% endif %}
 
-      <div class="section__content">
-        {% content_for 'blocks' %}
+    <div class="section__content">
+      {% content_for 'blocks' %}
 
-        <div
-          class="resource-list {{ classes }} {% if section.settings.carousel_on_mobile %}carousel-on-mobile{% endif %}"
-          style="{{ styles }}"
-          {% if section.settings.layout_type == 'carousel' %}
-            is="resource-list-carousel"
-          {% endif %}
-        >
-          <div class="resource-list__wrapper">
-            {% for product in matched_products limit: section.settings.max_products %}
-              <div class="resource-list__item">
-                {% content_for 'block', type: '_product-card', id: 'product-card', closest.product: product %}
-              </div>
+      <div
+        class="resource-list {{ classes }} {% if section.settings.carousel_on_mobile %}carousel-on-mobile{% endif %}"
+        style="{{ styles }}"
+        {% if section.settings.layout_type == 'carousel' %}
+          is="resource-list-carousel"
+        {% endif %}
+      >
+        <div class="resource-list__wrapper">
+          {% assign matched_count = 0 %}
+          
+          {% for collection in current_product.collections limit: 3 %}
+            {% if matched_count >= max_products %}
+              {% break %}
+            {% endif %}
+            
+            {% for product_item in collection.products limit: 50 %}
+              {% if matched_count >= max_products %}
+                {% break %}
+              {% endif %}
+              
+              {% if product_item.id != current_product.id %}
+                {% assign has_match = false %}
+                {% for tag in product_item.tags %}
+                  {% if current_product.tags contains tag %}
+                    {% assign has_match = true %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+                
+                {% if has_match %}
+                  <div class="resource-list__item">
+                    {% content_for 'block', type: '_product-card', id: 'product-card', closest.product: product_item %}
+                  </div>
+                  {% assign matched_count = matched_count | plus: 1 %}
+                {% endif %}
+              {% endif %}
             {% endfor %}
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
   </div>
-{% endif %}
+</div>
 
 {% schema %}
 {
