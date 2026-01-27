@@ -587,7 +587,7 @@
       ],
       "name": "t:names.product_recommendations",
       "settings": {
-        "product": "{{ product }}",
+        "product": "alocasia-polly",
         "recommendation_type": "related",
         "layout_type": "grid",
         "carousel_on_mobile": false,
