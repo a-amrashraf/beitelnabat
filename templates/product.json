@@ -249,15 +249,15 @@
               },
               "block_order": []
             },
-            "accordion_agaN3i": {
+            "accordion_8VCzqF": {
               "type": "accordion",
               "name": "t:names.accordion",
               "settings": {
                 "icon": "caret",
                 "dividers": true,
                 "type_preset": "h6",
-                "inherit_color_scheme": false,
-                "color_scheme": "scheme-271a1134-8b3d-4704-b712-7dc512db2467",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -268,16 +268,16 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "accordion_row_kJN8yz": {
+                "accordion_row_3zx7Kx": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "aaaaaaaaaaaaaaaaaaaaa",
-                    "open_by_default": false,
-                    "icon": "arrow",
-                    "width": 12
+                    "heading": "Return policy",
+                    "open_by_default": true,
+                    "icon": "none",
+                    "width": 20
                   },
                   "blocks": {
-                    "text_UPHTNy": {
+                    "text_ceWDB8": {
                       "type": "text",
                       "settings": {
                         "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
@@ -304,10 +304,10 @@
                     }
                   },
                   "block_order": [
-                    "text_UPHTNy"
+                    "text_ceWDB8"
                   ]
                 },
-                "accordion_row_Bt7a6B": {
+                "accordion_row_nbbJCP": {
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Shipping",
@@ -316,7 +316,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_zq63MH": {
+                    "text_qeVieg": {
                       "type": "text",
                       "settings": {
                         "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
@@ -343,10 +343,10 @@
                     }
                   },
                   "block_order": [
-                    "text_zq63MH"
+                    "text_qeVieg"
                   ]
                 },
-                "accordion_row_yB8Mza": {
+                "accordion_row_44CTQy": {
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Manufacturing",
@@ -355,7 +355,7 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_zJMCN9": {
+                    "text_iLkPPc": {
                       "type": "text",
                       "settings": {
                         "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
@@ -382,14 +382,14 @@
                     }
                   },
                   "block_order": [
-                    "text_zJMCN9"
+                    "text_iLkPPc"
                   ]
                 }
               },
               "block_order": [
-                "accordion_row_kJN8yz",
-                "accordion_row_Bt7a6B",
-                "accordion_row_yB8Mza"
+                "accordion_row_3zx7Kx",
+                "accordion_row_nbbJCP",
+                "accordion_row_44CTQy"
               ]
             },
             "dnd_product_specs_product_specs_LzHXF6": {
@@ -419,7 +419,7 @@
             "variant_picker_R3rGDr",
             "divider_VJhene",
             "buy_buttons_eYQEYi",
-            "accordion_agaN3i",
+            "accordion_8VCzqF",
             "dnd_product_specs_product_specs_LzHXF6"
           ]
         }
