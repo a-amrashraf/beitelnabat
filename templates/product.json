@@ -256,8 +256,8 @@
                 "icon": "caret",
                 "dividers": true,
                 "type_preset": "h6",
-                "inherit_color_scheme": true,
-                "color_scheme": "",
+                "inherit_color_scheme": false,
+                "color_scheme": "scheme-271a1134-8b3d-4704-b712-7dc512db2467",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -271,10 +271,10 @@
                 "accordion_row_kJN8yz": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Return policy",
-                    "open_by_default": true,
-                    "icon": "none",
-                    "width": 20
+                    "heading": "aaaaaaaaaaaaaaaaaaaaa",
+                    "open_by_default": false,
+                    "icon": "arrow",
+                    "width": 12
                   },
                   "blocks": {
                     "text_UPHTNy": {
