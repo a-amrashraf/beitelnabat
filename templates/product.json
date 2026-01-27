@@ -257,11 +257,11 @@
                 "dividers": true,
                 "type_preset": "",
                 "inherit_color_scheme": false,
-                "color_scheme": "scheme-2",
+                "color_scheme": "scheme-3",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0,
+                "border_radius": 10,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -271,9 +271,9 @@
                 "accordion_row_3zx7Kx": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Return policy",
+                    "heading": "Design Notes",
                     "open_by_default": false,
-                    "icon": "arrow",
+                    "icon": "check_box",
                     "width": 20
                   },
                   "blocks": {
@@ -310,9 +310,9 @@
                 "accordion_row_nbbJCP": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping",
+                    "heading": "What's Included",
                     "open_by_default": false,
-                    "icon": "none",
+                    "icon": "box",
                     "width": 20
                   },
                   "blocks": {
@@ -345,51 +345,11 @@
                   "block_order": [
                     "text_qeVieg"
                   ]
-                },
-                "accordion_row_44CTQy": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "Manufacturing",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_iLkPPc": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_iLkPPc"
-                  ]
                 }
               },
               "block_order": [
                 "accordion_row_3zx7Kx",
-                "accordion_row_nbbJCP",
-                "accordion_row_44CTQy"
+                "accordion_row_nbbJCP"
               ]
             },
             "dnd_product_specs_product_specs_LzHXF6": {
