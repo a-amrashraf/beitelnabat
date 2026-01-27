@@ -1,0 +1,352 @@
+
+<script
+  src="{{ 'product-recommendations.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{% liquid
+  case section.settings.layout_type
+    when 'grid'
+      assign classes = 'resource-list--grid'
+    when 'carousel'
+      assign classes = 'resource-list__carousel'
+  endcase
+
+  capture styles
+    echo '--column-count-mobile: ' | append: section.settings.mobile_columns | append: ';'
+    echo '--resource-list-column-gap-desktop: ' | append: section.settings.columns_gap | append: 'px;'
+    echo '--resource-list-row-gap-desktop: ' | append: section.settings.rows_gap | append: 'px;'
+    echo '--resource-list-columns: repeat(' | append: section.settings.columns | append: ', 1fr);'
+    echo '--resource-list-columns-mobile: repeat(' | append: section.settings.mobile_columns | append: ', 1fr);'
+    echo '--resource-list-column-gap-desktop: ' | append: section.settings.columns_gap | append: 'px;'
+    echo '--column-count: ' | append: section.settings.columns | append: ';'
+    echo '--column-count-mobile: ' | append: section.settings.mobile_columns | append: ';'
+  endcapture
+
+  # Get the current product
+  assign current_product = section.settings.product | default: product
+  
+  # Get matching products based on tags
+  assign matching_products = blank
+  assign products_found = 0
+  assign max_products = section.settings.max_products
+  
+  # Create array to store matching products
+  assign matched_products = '' | split: ','
+  
+  # Loop through current product tags to find matching products
+  if current_product.tags.size > 0
+    for collection in collections
+      for collection_product in collection.products limit: 50
+        if collection_product.id != current_product.id and products_found < max_products
+          # Check if this product shares any tags with current product
+          assign has_matching_tag = false
+          for product_tag in collection_product.tags
+            if current_product.tags contains product_tag
+              assign has_matching_tag = true
+              break
+            endif
+          endfor
+          
+          if has_matching_tag
+            # Check if we already added this product
+            assign already_added = false
+            for matched in matched_products
+              if matched.id == collection_product.id
+                assign already_added = true
+                break
+              endif
+            endfor
+            
+            unless already_added
+              assign matched_products = matched_products | concat: collection_product
+              assign products_found = products_found | plus: 1
+            endunless
+          endif
+        endif
+      endfor
+      
+      if products_found >= max_products
+        break
+      endif
+    endfor
+  endif
+%}
+
+{% if matched_products.size > 0 %}
+  <div
+    id="product-recommendations-by-tag-{{ section.id }}"
+    class="product-recommendations-by-tag"
+    data-section-id="{{ section.id }}"
+    data-testid="product-recommendations-by-tag-section"
+    {{ section.shopify_attributes }}
+  >
+    <div class="section-background color-{{ section.settings.color_scheme }}"></div>
+    <div
+      class="
+        section
+        section--{{ section.settings.section_width }}
+        color-{{ section.settings.color_scheme }}
+        section-resource-list
+        spacing-style
+        gap-style
+      "
+      style="
+        {%  render 'spacing-style', settings: section.settings %}
+        --gap: {{ section.settings.gap }}px;
+      "
+    >
+      {% if section.settings.enable_section_background %}
+        <div class="section-background"></div>
+      {% endif %}
+
+      <div class="section__content">
+        {% content_for 'blocks' %}
+
+        <div
+          class="resource-list {{ classes }} {% if section.settings.carousel_on_mobile %}carousel-on-mobile{% endif %}"
+          style="{{ styles }}"
+          {% if section.settings.layout_type == 'carousel' %}
+            is="resource-list-carousel"
+          {% endif %}
+        >
+          <div class="resource-list__wrapper">
+            {% for product in matched_products limit: section.settings.max_products %}
+              <div class="resource-list__item">
+                {% content_for 'block', type: '_product-card', id: 'product-card', closest.product: product %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product Recommendations (By Tag)",
+  "tag": "section",
+  "class": "product-recommendations-by-tag-section",
+  "blocks": [
+    {
+      "type": "text",
+      "name": "t:names.text",
+      "limit": 1
+    },
+    {
+      "type": "_product-card",
+      "name": "t:names.product_card",
+      "limit": 1
+    }
+  ],
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "info": "Leave empty to use the current product page's product"
+    },
+    {
+      "type": "paragraph",
+      "content": "This section shows products that share tags with the current product. For example, if viewing a product tagged 'plants', it will show other products with the 'plants' tag."
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "layout_type",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "carousel",
+          "label": "Carousel"
+        }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "checkbox",
+      "id": "carousel_on_mobile",
+      "label": "Enable carousel on mobile",
+      "default": false,
+      "visible_if": "{{ block.settings.layout_type == 'grid' }}"
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "Maximum products to show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Desktop columns",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "Mobile columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "columns_gap",
+      "label": "Columns gap",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "rows_gap",
+      "label": "Rows gap",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "icons_style",
+      "label": "Carousel navigation style",
+      "options": [
+        {
+          "value": "arrow",
+          "label": "Arrows"
+        },
+        {
+          "value": "chevron",
+          "label": "Chevrons"
+        },
+        {
+          "value": "caret",
+          "label": "Carets"
+        }
+      ],
+      "default": "arrow",
+      "visible_if": "{{ block.settings.layout_type == 'carousel' }}"
+    },
+    {
+      "type": "select",
+      "id": "icons_shape",
+      "label": "Carousel navigation shape",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "circle",
+          "label": "Circle"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ block.settings.layout_type == 'carousel' }}"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "Page width"
+        },
+        {
+          "value": "full-width",
+          "label": "Full width"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Spacing between elements",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top padding",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Recommendations (By Tag)",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>You May Also Like</strong></h3>",
+            "width": "fit-content",
+            "alignment": "left",
+            "type_preset": "h3"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
