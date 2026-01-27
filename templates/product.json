@@ -585,10 +585,9 @@
       "block_order": [
         "text_cbcgyb"
       ],
-      "disabled": true,
       "name": "t:names.product_recommendations",
       "settings": {
-        "product": "alocasia-polly",
+        "product": "",
         "recommendation_type": "related",
         "layout_type": "grid",
         "carousel_on_mobile": false,
@@ -612,7 +611,7 @@
         "heading_text": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>You May Also Like</strong></h3>",
+            "text": "<h3><strong>Similar Products</strong></h3>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",

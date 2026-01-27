@@ -66,21 +66,21 @@
       >
         <div class="resource-list__wrapper">
           {% assign matched_count = 0 %}
+          {% assign current_tags = current_product.tags | join: ',' %}
           
-          {% for collection in current_product.collections limit: 3 %}
-            {% if matched_count >= max_products %}
-              {% break %}
-            {% endif %}
-            
-            {% for product_item in collection.products limit: 50 %}
+          {% comment %} Try to get products from the first collection {% endcomment %}
+          {% if current_product.collections.first %}
+            {% for product_item in current_product.collections.first.products limit: 20 %}
               {% if matched_count >= max_products %}
                 {% break %}
               {% endif %}
               
               {% if product_item.id != current_product.id %}
                 {% assign has_match = false %}
-                {% for tag in product_item.tags %}
-                  {% if current_product.tags contains tag %}
+                
+                {% comment %} Check if product shares any tags with current product {% endcomment %}
+                {% for product_tag in product_item.tags %}
+                  {% if current_tags contains product_tag %}
                     {% assign has_match = true %}
                     {% break %}
                   {% endif %}
@@ -94,7 +94,42 @@
                 {% endif %}
               {% endif %}
             {% endfor %}
-          {% endfor %}
+          {% endif %}
+          
+          {% comment %} If not enough products found, search other collections {% endcomment %}
+          {% if matched_count < max_products %}
+            {% for collection in current_product.collections offset: 1 limit: 3 %}
+              {% if matched_count >= max_products %}
+                {% break %}
+              {% endif %}
+              
+              {% for product_item in collection.products limit: 20 %}
+                {% if matched_count >= max_products %}
+                  {% break %}
+                {% endif %}
+                
+                {% if product_item.id != current_product.id %}
+                  {% assign already_added = false %}
+                  {% assign has_match = false %}
+                  
+                  {% comment %} Check if product shares any tags {% endcomment %}
+                  {% for product_tag in product_item.tags %}
+                    {% if current_tags contains product_tag %}
+                      {% assign has_match = true %}
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                  
+                  {% if has_match %}
+                    <div class="resource-list__item">
+                      {% content_for 'block', type: '_product-card', id: 'product-card', closest.product: product_item %}
+                    </div>
+                    {% assign matched_count = matched_count | plus: 1 %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          {% endif %}
         </div>
       </div>
     </div>
