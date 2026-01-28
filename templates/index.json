@@ -577,9 +577,9 @@
               "name": "t:names.collection_title",
               "settings": {
                 "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -640,7 +640,7 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "adapt",
+                "image_ratio": "portrait",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -656,9 +656,9 @@
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -710,7 +710,7 @@
       },
       "name": "t:names.products_carousel",
       "settings": {
-        "collection": "",
+        "collection": "products",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 6,
@@ -725,8 +725,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 28,
         "color_scheme": "scheme-3",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 30,
+        "padding-block-end": 30
       }
     },
     "hero_Ha3FDU": {
