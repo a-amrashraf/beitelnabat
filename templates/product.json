@@ -466,7 +466,7 @@
                     "text_GQnaC3": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>Let the plant settle for 7 days after delivery</li><li>Avoid overwatering, dryness is better than excess care</li><li>Do not repot immediately</li><li>Full care guide sent after purchase via QR.</li></ul>",
+                        "text": "{{ closest.product.metafields.custom.care_snapshot | metafield_tag }}",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
