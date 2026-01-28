@@ -501,28 +501,6 @@
                 "accordion_row_nbbJCP",
                 "accordion_row_6r9czU"
               ]
-            },
-            "dnd_product_specs_product_specs_LzHXF6": {
-              "type": "shopify://apps/dnd-product-specs/blocks/product_specs/1dd2dcf1-0558-425e-ab46-1bc96d40c5a7",
-              "disabled": true,
-              "settings": {
-                "header_text": "Product Information",
-                "heading_font": "sans_serif_n4",
-                "header_alignment": "center",
-                "header_size": 20,
-                "banner_color": "#2e4a29",
-                "header_color": "#ffffff",
-                "default_open": true,
-                "banded": true,
-                "border_color": "#dddddd",
-                "border_size": 1,
-                "inner_border_color": "#eeeeee",
-                "inner_border_size": 1,
-                "primary_row_color": "#ffffff",
-                "secondary_row_color": "#f9fafb",
-                "key_text_color": "#000000",
-                "value_text_color": "#000000"
-              }
             }
           },
           "block_order": [
@@ -530,8 +508,7 @@
             "variant_picker_R3rGDr",
             "divider_VJhene",
             "buy_buttons_eYQEYi",
-            "accordion_8VCzqF",
-            "dnd_product_specs_product_specs_LzHXF6"
+            "accordion_8VCzqF"
           ]
         }
       },
