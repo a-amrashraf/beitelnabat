@@ -112,7 +112,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "{{ closest.product.metafields.custom.plant_role | metafield_tag }}",
+                    "text": "<p>Plant Role: </p>{{ closest.product.metafields.custom.plant_role | metafield_tag }}",
                     "width": "fit-content",
                     "max_width": "narrow",
                     "alignment": "left",
