@@ -108,6 +108,32 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "text_Gdgfgw": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "{{ closest.product.metafields.custom.plant_role | metafield_tag }}",
+                    "width": "fit-content",
+                    "max_width": "narrow",
+                    "alignment": "left",
+                    "type_preset": "h4",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "text_xrnftG": {
                   "type": "text",
                   "name": "Product title",
@@ -184,6 +210,7 @@
                 }
               },
               "block_order": [
+                "text_Gdgfgw",
                 "text_xrnftG",
                 "text_WmRzmG",
                 "price_tVjtKg"
@@ -268,6 +295,46 @@
                 "padding-inline-end": 15
               },
               "blocks": {
+                "accordion_row_e34PUY": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Studio Specs",
+                    "open_by_default": true,
+                    "icon": "leaf",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_xUmKGd": {
+                      "type": "text",
+                      "settings": {
+                        "text": "{{ closest.product.metafields.custom.studio_specs | metafield_tag }}",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_xUmKGd"
+                  ]
+                },
                 "accordion_row_3zx7Kx": {
                   "type": "_accordion-row",
                   "settings": {
@@ -280,7 +347,7 @@
                     "text_ceWDB8": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
+                        "text": "<p>{{ closest.product.metafields.custom.design_notes | metafield_tag }}</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -319,7 +386,7 @@
                     "text_qeVieg": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "{{ closest.product.metafields.custom.whats_s_included | metafield_tag }}",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -348,12 +415,14 @@
                 }
               },
               "block_order": [
+                "accordion_row_e34PUY",
                 "accordion_row_3zx7Kx",
                 "accordion_row_nbbJCP"
               ]
             },
             "dnd_product_specs_product_specs_LzHXF6": {
               "type": "shopify://apps/dnd-product-specs/blocks/product_specs/1dd2dcf1-0558-425e-ab46-1bc96d40c5a7",
+              "disabled": true,
               "settings": {
                 "header_text": "Product Information",
                 "heading_font": "sans_serif_n4",
