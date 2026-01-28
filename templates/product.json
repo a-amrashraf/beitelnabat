@@ -335,6 +335,46 @@
                     "text_xUmKGd"
                   ]
                 },
+                "accordion_row_9zrzHB": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Where It Works Best",
+                    "open_by_default": false,
+                    "icon": "question_mark",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_UgzAAr": {
+                      "type": "text",
+                      "settings": {
+                        "text": "{{ closest.product.metafields.custom.where_it_works_best | metafield_tag }}",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_UgzAAr"
+                  ]
+                },
                 "accordion_row_3zx7Kx": {
                   "type": "_accordion-row",
                   "settings": {
@@ -456,6 +496,7 @@
               },
               "block_order": [
                 "accordion_row_e34PUY",
+                "accordion_row_9zrzHB",
                 "accordion_row_3zx7Kx",
                 "accordion_row_nbbJCP",
                 "accordion_row_6r9czU"
