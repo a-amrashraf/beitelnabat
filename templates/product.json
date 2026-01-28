@@ -412,12 +412,53 @@
                   "block_order": [
                     "text_qeVieg"
                   ]
+                },
+                "accordion_row_6r9czU": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Care Snapshot",
+                    "open_by_default": false,
+                    "icon": "heart",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_GQnaC3": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<ul><li>Let the plant settle for 7 days after delivery</li><li>Avoid overwatering, dryness is better than excess care</li><li>Do not repot immediately</li><li>Full care guide sent after purchase via QR.</li></ul>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_GQnaC3"
+                  ]
                 }
               },
               "block_order": [
                 "accordion_row_e34PUY",
                 "accordion_row_3zx7Kx",
-                "accordion_row_nbbJCP"
+                "accordion_row_nbbJCP",
+                "accordion_row_6r9czU"
               ]
             },
             "dnd_product_specs_product_specs_LzHXF6": {
