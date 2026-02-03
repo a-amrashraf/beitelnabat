@@ -9,8 +9,10 @@
  */
 {
   "current": {
-    "logo_height": 12,
-    "logo_height_mobile": 12,
+    "logo": "shopify://shop_images/WhatsApp_Image_2026-02-02_at_9.04.41_AM-removebg-preview.png",
+    "logo_height": 100,
+    "logo_height_mobile": 100,
+    "favicon": "shopify://shop_images/WhatsApp_Image_2026-02-02_at_9.04.41_AM-removebg-preview.png",
     "type_body_font": "assistant_n4",
     "type_subheading_font": "assistant_n3",
     "type_heading_font": "merriweather_sans_n7",
