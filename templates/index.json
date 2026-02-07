@@ -295,11 +295,11 @@
           "settings": {
             "product_card_gap": 8,
             "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
+            "color_scheme": "scheme-4",
+            "border": "solid",
+            "border_width": 3,
             "border_opacity": 100,
-            "border_radius": 0,
+            "border_radius": 5,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -423,12 +423,39 @@
                     "product_swatches_padding_right": 0
                   },
                   "blocks": {}
+                },
+                "text_Qhwiib": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "{{ closest.product.metafields.custom.plant_role | metafield_tag }}",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "center",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
                 "text_MEKzFi",
                 "price_37riDf",
-                "swatches_87VJC8"
+                "swatches_87VJC8",
+                "text_Qhwiib"
               ]
             }
           },
@@ -443,8 +470,8 @@
         "collection": "products",
         "layout_type": "grid",
         "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
+        "max_products": 6,
+        "columns": 3,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
         "columns_gap": 24,
@@ -708,6 +735,7 @@
           ]
         }
       },
+      "disabled": true,
       "name": "t:names.products_carousel",
       "settings": {
         "collection": "products",
@@ -849,6 +877,7 @@
       "block_order": [
         "group_wJfcmV"
       ],
+      "disabled": true,
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
