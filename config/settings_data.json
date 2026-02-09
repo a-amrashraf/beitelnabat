@@ -34,6 +34,7 @@
     "badge_corner_radius": 10,
     "badge_color_mode": "custom",
     "badge_sale_background": "#e9dfc8",
+    "badge_sold_out_background": "#e9dfc8",
     "badge_sale_color_scheme": "scheme-5",
     "badge_sold_out_color_scheme": "scheme-3",
     "badge_text_transform": "none",
