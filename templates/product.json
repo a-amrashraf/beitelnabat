@@ -112,7 +112,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Plant Role: </p>{{ closest.product.metafields.custom.plant_role | metafield_tag }}",
+                    "text": "<p></p>{{ closest.product.metafields.custom.plant_role | metafield_tag }}",
                     "width": "fit-content",
                     "max_width": "narrow",
                     "alignment": "left",
@@ -295,52 +295,12 @@
                 "padding-inline-end": 15
               },
               "blocks": {
-                "accordion_row_e34PUY": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
-                  "settings": {
-                    "heading": "Studio Specs",
-                    "open_by_default": true,
-                    "icon": "leaf",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_xUmKGd": {
-                      "type": "text",
-                      "settings": {
-                        "text": "{{ closest.product.metafields.custom.studio_specs | metafield_tag }}",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_xUmKGd"
-                  ]
-                },
                 "accordion_row_9zrzHB": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
                     "heading": "Where It Works Best",
-                    "open_by_default": false,
+                    "open_by_default": true,
                     "icon": "question_mark",
                     "width": 20
                   },
@@ -373,6 +333,46 @@
                   },
                   "block_order": [
                     "text_UgzAAr"
+                  ]
+                },
+                "accordion_row_e34PUY": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Studio Specs",
+                    "open_by_default": false,
+                    "icon": "leaf",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_xUmKGd": {
+                      "type": "text",
+                      "settings": {
+                        "text": "{{ closest.product.metafields.custom.studio_specs | metafield_tag }}",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_xUmKGd"
                   ]
                 },
                 "accordion_row_3zx7Kx": {
@@ -492,14 +492,96 @@
                   "block_order": [
                     "text_GQnaC3"
                   ]
+                },
+                "accordion_row_7V78z7": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "When will I get my order?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_8Yr3Y4": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_8Yr3Y4"
+                  ]
+                },
+                "accordion_row_eUKQgM": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "When will I get my order?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_tV8jgY": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_tV8jgY"
+                  ]
                 }
               },
               "block_order": [
-                "accordion_row_e34PUY",
                 "accordion_row_9zrzHB",
+                "accordion_row_e34PUY",
                 "accordion_row_3zx7Kx",
                 "accordion_row_nbbJCP",
-                "accordion_row_6r9czU"
+                "accordion_row_6r9czU",
+                "accordion_row_7V78z7",
+                "accordion_row_eUKQgM"
               ]
             }
           },
