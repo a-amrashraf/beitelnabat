@@ -537,9 +537,9 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "When will I get my order?",
+                    "heading": "Style Tags",
                     "open_by_default": false,
-                    "icon": "none",
+                    "icon": "star",
                     "width": 20
                   },
                   "blocks": {
