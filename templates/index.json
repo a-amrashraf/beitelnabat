@@ -163,6 +163,20 @@
         "padding-block-end": 64
       }
     },
+    "divider_3eMz3b": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
+      }
+    },
     "marquee_HWqb8W": {
       "type": "marquee",
       "blocks": {
@@ -229,6 +243,20 @@
         "padding-block-start": 24,
         "padding-block-end": 24,
         "gap_between_elements": 24
+      }
+    },
+    "divider_EVnVnn": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
       }
     },
     "product_list_themegen": {
@@ -497,6 +525,20 @@
         "padding-block-end": 48
       }
     },
+    "divider_Jrb4jm": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
+      }
+    },
     "section_x8mrnx": {
       "type": "section",
       "blocks": {
@@ -571,6 +613,20 @@
         "gradient_direction": "to top",
         "padding-block-start": 64,
         "padding-block-end": 64
+      }
+    },
+    "divider_64bCaB": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
       }
     },
     "section_ELFaeC": {
@@ -908,9 +964,13 @@
   },
   "order": [
     "hero_p9CmMG",
+    "divider_3eMz3b",
     "marquee_HWqb8W",
+    "divider_EVnVnn",
     "product_list_themegen",
+    "divider_Jrb4jm",
     "section_x8mrnx",
+    "divider_64bCaB",
     "section_ELFaeC"
   ]
 }
