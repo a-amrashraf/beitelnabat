@@ -56,11 +56,11 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h3>carefully grown and selected to thrive in Egyptian homes</h3>",
-                "width": "fit-content",
-                "max_width": "narrow",
+                "text": "<p>carefully grown and selected to thrive in Egyptian homes</p>",
+                "width": "100%",
+                "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h3",
+                "type_preset": "h2",
                 "font": "var(--font-body--family)",
                 "font_size": "1.125rem",
                 "line_height": "normal",
@@ -92,32 +92,43 @@
                 "custom_width_mobile": 100
               },
               "blocks": {}
+            },
+            "text_BDEKYx": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>plants that elevate your space and grow beautifully</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "text_Eh3BEw",
-            "button_PP8kg9"
+            "button_PP8kg9",
+            "text_BDEKYx"
           ]
-        },
-        "jumbo_text_hL3t9T": {
-          "type": "jumbo-text",
-          "name": "t:names.jumbo_text",
-          "settings": {
-            "text": "plants that elevate your space and grow beautifully",
-            "font": "subheading",
-            "alignment": "left",
-            "line_height": "0.8",
-            "letter_spacing": "-0.03em",
-            "case": "none",
-            "text_effect": "none",
-            "animation_repeat": false
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "group_6w9b3Y",
-        "jumbo_text_hL3t9T"
+        "group_6w9b3Y"
       ],
       "name": "t:names.hero",
       "settings": {
