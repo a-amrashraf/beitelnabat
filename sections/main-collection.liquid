@@ -51,11 +51,37 @@
     {% paginate collection.products by products_per_page %}
       {% capture children %}
         {% for product in collection.products %}
+          {%- liquid
+            assign filter_metafield = product.metafields.custom.filter_options
+            assign filter_option_values = ''
+            assign filter_option_labels = ''
+            if filter_metafield != blank
+              if filter_metafield.type == 'list.single_line_text_field'
+                assign option_handles = '' | split: ','
+                assign option_labels = '' | split: ','
+                for option in filter_metafield.value
+                  assign option_handle = option | strip | handleize
+                  assign option_label = option | strip
+                  if option_handle != blank
+                    assign option_handles = option_handles | push: option_handle
+                    assign option_labels = option_labels | push: option_label
+                  endif
+                endfor
+                assign filter_option_values = option_handles | uniq | join: '|'
+                assign filter_option_labels = option_labels | uniq | join: '|'
+              else
+                assign filter_option_values = filter_metafield.value | strip | handleize
+                assign filter_option_labels = filter_metafield.value | strip
+              endif
+            endif
+          -%}
           <li
             id="{{ section.id }}-{{ product.id }}"
             class="product-grid__item product-grid__item--{{ forloop.index0 }}"
             data-page="{{ paginate.current_page }}"
             data-product-id="{{ product.id }}"
+            data-filter-options="{{ filter_option_values }}"
+            data-filter-options-raw="{{ filter_option_labels | escape }}"
             ref="cards[]"
           >
             {% # theme-check-disable %}

@@ -14,6 +14,12 @@
 ></script>
 
 <script
+  src="{{ 'filter-options.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+<script
   src="{{ 'scrolling.js' | asset_url }}"
   type="module"
   fetchpriority="low"
@@ -60,6 +66,27 @@
     assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
   endif
 
+  assign filter_options_values = '' | split: ','
+  for product in results.products
+    assign filter_metafield = product.metafields.custom.filter_options
+    if filter_metafield != blank
+      if filter_metafield.type == 'list.single_line_text_field'
+        for option in filter_metafield.value
+          assign option_clean = option | strip
+          if option_clean != blank
+            assign filter_options_values = filter_options_values | push: option_clean
+          endif
+        endfor
+      else
+        assign option_clean = filter_metafield.value | strip
+        if option_clean != blank
+          assign filter_options_values = filter_options_values | push: option_clean
+        endif
+      endif
+    endif
+  endfor
+  assign filter_options_values = filter_options_values | uniq | sort
+
   assign is_active = false
   assign should_show_pane = true
   if block_settings.filter_style == 'vertical'
@@ -76,6 +103,146 @@
     assign should_show_vertical_clear_all = false
   endif
 -%}
+
+{% capture filter_options_markup %}
+  {% if filter_options_values.size > 0 %}
+    <accordion-custom
+      class="facets__item facets__item--filter-options"
+      data-filter-options-filter
+      {% if block_settings.filter_style == 'horizontal' %}
+        data-disable-animation-on-desktop="true"
+        data-close-with-escape="true"
+      {% endif %}
+      {% if block_settings.filter_style == 'vertical' %}
+        open
+        open-by-default-on-mobile
+        open-by-default-on-desktop
+      {% endif %}
+    >
+      <details
+        id="Facet-Details-{{ section.id }}-filter-options"
+        class="facets__panel"
+        {% if block_settings.filter_style == 'horizontal' %}
+          data-auto-close-details="desktop"
+        {% endif %}
+        {% if block_settings.filter_style == 'vertical' %}
+          open
+        {% endif %}
+      >
+        <summary class="facets__summary">
+          <span class="facets__label">{{ 'content.filter_options' | t }}</span>
+          <div class="facets__status-wrapper">
+            <span class="facets__status" data-filter-options-count-wrapper>
+              <span class="bubble facets__bubble" data-filter-options-count></span>
+            </span>
+            <span class="svg-wrapper icon-caret icon-animated">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </div>
+        </summary>
+        <floating-panel-component
+          {% unless block_settings.filter_style == 'vertical' %}
+            data-close-on-resize
+          {% endunless %}
+          class="facets__inputs facets__panel-content details-content{% if block_settings.filter_style == 'horizontal' %} color-{{ settings.popover_color_scheme }}{% endif %}"
+          id="facet-inputs-filter-options-{{ section.id }}"
+        >
+          <div class="facets__inputs-wrapper">
+            <ul class="facets__inputs-list list-unstyled" id="filters-list-{{ section.id }}-filter-options">
+              {%- for option in filter_options_values -%}
+                {% assign option_handle = option | handleize %}
+                <li>
+                  <div class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="filter-options"
+                      value="{{ option_handle }}"
+                      id="FilterOptions-{{ section.id }}-{{ forloop.index }}"
+                      class="checkbox__input"
+                      data-label="{{ option }}"
+                    >
+                    <label class="checkbox__label" for="FilterOptions-{{ section.id }}-{{ forloop.index }}" role="checkbox">
+                      {{ 'icon-checkmark.svg' | inline_asset_content }}
+                      <span class="checkbox__label-text">{{- option -}}</span>
+                    </label>
+                  </div>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+          <div class="facets__clear" data-filter-options-clear>
+            <button type="button" class="clear-filter button button-secondary">
+              {{- 'actions.clear' | t -}}
+            </button>
+          </div>
+        </floating-panel-component>
+      </details>
+    </accordion-custom>
+  {% endif %}
+{% endcapture %}
+
+{% capture filter_options_markup_drawer %}
+  {% if filter_options_values.size > 0 %}
+    <accordion-custom
+      class="facets__item facets__item--filter-options"
+      data-filter-options-filter
+      open
+      open-by-default-on-mobile
+      open-by-default-on-desktop
+    >
+      <details
+        id="Facet-Details-{{ section.id }}-filter-options-drawer"
+        class="facets__panel"
+        open
+      >
+        <summary class="facets__summary">
+          <span class="facets__label">{{ 'content.filter_options' | t }}</span>
+          <div class="facets__status-wrapper">
+            <span class="facets__status" data-filter-options-count-wrapper>
+              <span class="bubble facets__bubble" data-filter-options-count></span>
+            </span>
+            <span class="svg-wrapper icon-caret icon-animated">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </div>
+        </summary>
+        <floating-panel-component
+          class="facets__inputs facets__panel-content details-content"
+          id="facet-inputs-filter-options-{{ section.id }}-drawer"
+        >
+          <div class="facets__inputs-wrapper">
+            <ul class="facets__inputs-list list-unstyled" id="filters-list-{{ section.id }}-filter-options-drawer">
+              {%- for option in filter_options_values -%}
+                {% assign option_handle = option | handleize %}
+                <li>
+                  <div class="checkbox">
+                    <input
+                      type="checkbox"
+                      name="filter-options"
+                      value="{{ option_handle }}"
+                      id="FilterOptionsDrawer-{{ section.id }}-{{ forloop.index }}"
+                      class="checkbox__input"
+                      data-label="{{ option }}"
+                    >
+                    <label class="checkbox__label" for="FilterOptionsDrawer-{{ section.id }}-{{ forloop.index }}" role="checkbox">
+                      {{ 'icon-checkmark.svg' | inline_asset_content }}
+                      <span class="checkbox__label-text">{{- option -}}</span>
+                    </label>
+                  </div>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+          <div class="facets__clear" data-filter-options-clear>
+            <button type="button" class="clear-filter button button-secondary">
+              {{- 'actions.clear' | t -}}
+            </button>
+          </div>
+        </floating-panel-component>
+      </details>
+    </accordion-custom>
+  {% endif %}
+{% endcapture %}
 
 {% if block_settings.enable_filtering or block_settings.enable_sorting or block_settings.enable_grid_density %}
   {% if block_settings.filter_style == 'vertical' %}
@@ -207,6 +374,7 @@
               {% endcapture %}
 
               <div class="facets__filters-wrapper">
+                {{ filter_options_markup }}
                 {% if block_settings.filter_style == 'horizontal' %}
                   {% liquid
                     assign more_attributes = 'on:click="#filters-drawer/showDialog"'
@@ -424,6 +592,7 @@
               %}
 
               <div class="facets__filters-wrapper">
+                {{ filter_options_markup_drawer }}
                 {% assign total_active_values = 0 %}
                 {% assign is_active = false %}
 
