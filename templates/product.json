@@ -546,7 +546,7 @@
                     "text_tV8jgY": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                        "text": "<p></p>{{ closest.product.metafields.custom.tags | metafield_tag }}",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
