@@ -169,7 +169,7 @@
       },
       "scheme-3": {
         "settings": {
-          "background": "#e6f2ea",
+          "background": "#6b8b75",
           "foreground_heading": "#1e3b2f",
           "foreground": "#1e3b2f",
           "primary": "#1e3b2f",
@@ -208,7 +208,7 @@
       },
       "scheme-4": {
         "settings": {
-          "background": "#a6b89c",
+          "background": "#6d895c",
           "foreground_heading": "#ffffff",
           "foreground": "#091208",
           "primary": "#091208",
