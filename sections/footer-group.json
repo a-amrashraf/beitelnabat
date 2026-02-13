@@ -423,6 +423,26 @@
                   },
                   "blocks": {}
                 },
+                "logo_rgkECi": {
+                  "type": "logo",
+                  "name": "t:names.logo",
+                  "settings": {
+                    "inverse": false,
+                    "font": "heading",
+                    "unit": "percent",
+                    "percent_width": 40,
+                    "pixel_height": 48,
+                    "custom_mobile_size": false,
+                    "unit_mobile": "percent",
+                    "percent_width_mobile": 100,
+                    "pixel_height_mobile": 120,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "email_signup_iTipdc": {
                   "type": "email-signup",
                   "name": "t:names.email_signup",
@@ -452,6 +472,7 @@
               },
               "block_order": [
                 "text_xfYzMh",
+                "logo_rgkECi",
                 "email_signup_iTipdc"
               ]
             }
