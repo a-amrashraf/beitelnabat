@@ -12,11 +12,37 @@
     "main": {
       "type": "main-page",
       "blocks": {
+        "text_heading_WGz9xT": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Coming Soon 🌿</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "text_fdMDVq": {
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+            "text": "<p>Coming Soon 🌿</p><p>We’re excited to introduce our upcoming Plant Consultation &amp; Site Visit Service. Whether you’re styling your home, workspace, or outdoor area, our experts will help you choose the perfect plants, plan placement, and create a thriving green environment tailored to your space.</p><p>Stay tuned — your personalized plant experience is almost here.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -40,6 +66,7 @@
         }
       },
       "block_order": [
+        "text_heading_WGz9xT",
         "text_fdMDVq"
       ],
       "settings": {
