@@ -687,7 +687,7 @@
       "type": "divider",
       "name": "t:names.divider_section",
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
         "section_width": "full-width",
         "thickness": 1,
         "corner_radius": "square",
@@ -1037,7 +1037,7 @@
         "section_width": "page-width",
         "section_height": "medium",
         "section_height_custom": 50,
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
