@@ -91,6 +91,11 @@
         "type": "shopify://apps/wrapengine-all-in-1-gift-wrap/blocks/app-embed/94ae1601-6516-4dd3-b63c-3083c6770343",
         "disabled": false,
         "settings": {}
+      },
+      "12108174171315376258": {
+        "type": "shopify://apps/aov-ai-cart-drawer/blocks/avada-embed/938869e1-3feb-48fa-ab79-27fdfe609836",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
