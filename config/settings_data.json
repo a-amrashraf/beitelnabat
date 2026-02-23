@@ -86,6 +86,11 @@
         "type": "shopify://apps/hoppy-free-shipping/blocks/shipping_bar/66159626-1fb8-4d18-901f-af7b6a63adaa",
         "disabled": false,
         "settings": {}
+      },
+      "11581668547761433565": {
+        "type": "shopify://apps/wrapengine-all-in-1-gift-wrap/blocks/app-embed/94ae1601-6516-4dd3-b63c-3083c6770343",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
