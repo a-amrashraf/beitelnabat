@@ -88,11 +88,6 @@
         "disabled": false,
         "settings": {}
       },
-      "3869478966488610803": {
-        "type": "shopify://apps/bisell-upsell/blocks/app-embed/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
-        "disabled": false,
-        "settings": {}
-      },
       "16605207545338212596": {
         "type": "shopify://apps/aov-ai-bundle/blocks/aov-offer/0335d423-143c-4ad7-b224-99a1db74a9ee",
         "disabled": false,
@@ -104,6 +99,11 @@
         "settings": {
           "storefrontAccessToken": ""
         }
+      },
+      "3869478966488610803": {
+        "type": "shopify://apps/bisell-upsell/blocks/app-embed/0be6eb92-28a2-4372-b8a6-4a6094b3c651",
+        "disabled": true,
+        "settings": {}
       }
     },
     "color_schemes": {
