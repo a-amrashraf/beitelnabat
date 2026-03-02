@@ -12,6 +12,10 @@
     "main": {
       "type": "product-information",
       "blocks": {
+        "mw_bundle_builder_build_offer_app_block_eCgHHm": {
+          "type": "shopify://apps/mw-bundle-builder/blocks/build-offer-app-block/5bcb1a6d-53b5-4d9c-b4f9-19f6620da62b",
+          "settings": {}
+        },
         "media-gallery": {
           "type": "_product-media-gallery",
           "static": true,
@@ -594,6 +598,9 @@
           ]
         }
       },
+      "block_order": [
+        "mw_bundle_builder_build_offer_app_block_eCgHHm"
+      ],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
