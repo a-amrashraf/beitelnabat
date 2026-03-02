@@ -88,23 +88,8 @@
         "disabled": false,
         "settings": {}
       },
-      "10597026053260177897": {
-        "type": "shopify://apps/wb-frequently-bought-together/blocks/app-embed/5f9bd783-09d5-43d2-bb37-85281ca56a6b",
-        "disabled": false,
-        "settings": {}
-      },
-      "4188547153274344210": {
-        "type": "shopify://apps/easy-bundle/blocks/app/491a753a-7e8b-4c89-a6fb-9028a1df000b",
-        "disabled": true,
-        "settings": {}
-      },
-      "12108174171315376258": {
-        "type": "shopify://apps/aov-ai-cart-drawer/blocks/avada-embed/938869e1-3feb-48fa-ab79-27fdfe609836",
-        "disabled": true,
-        "settings": {}
-      },
-      "1987381849243170004": {
-        "type": "shopify://apps/apphero-free-gift/blocks/app-embed/775538df-2a18-473b-ada3-d731b074c1a3",
+      "5918445685253060206": {
+        "type": "shopify://apps/bundler/blocks/bundler-script-append/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
         "disabled": false,
         "settings": {}
       }
