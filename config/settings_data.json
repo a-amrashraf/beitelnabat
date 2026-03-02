@@ -132,6 +132,11 @@
           "disable_upsell_crossell_popup": false,
           "custom_liquid": ""
         }
+      },
+      "13545778957601156705": {
+        "type": "shopify://apps/ai-product-bundle-builder/blocks/app-embed/889077c6-270f-4a8f-99af-5c8dcf42ef52",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
