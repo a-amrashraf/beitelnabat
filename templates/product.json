@@ -12,6 +12,10 @@
     "main": {
       "type": "product-information",
       "blocks": {
+        "wb_frequently_bought_together_single_product_j4Wgpz": {
+          "type": "shopify://apps/wb-frequently-bought-together/blocks/single-product/5f9bd783-09d5-43d2-bb37-85281ca56a6b",
+          "settings": {}
+        },
         "media-gallery": {
           "type": "_product-media-gallery",
           "static": true,
@@ -594,6 +598,9 @@
           ]
         }
       },
+      "block_order": [
+        "wb_frequently_bought_together_single_product_j4Wgpz"
+      ],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
