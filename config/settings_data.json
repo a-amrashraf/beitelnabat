@@ -93,14 +93,10 @@
         "disabled": false,
         "settings": {}
       },
-      "5091679841350464071": {
-        "type": "shopify://apps/swiftbundle-byob-products/blocks/bundlesuite-product/01996b33-4746-7d7c-9bee-8291607a4558",
+      "13398615634002302979": {
+        "type": "shopify://apps/banger-bundles/blocks/app_embed/019a2a1c-32ff-7616-9f3c-0c395f6cb1e7",
         "disabled": false,
-        "settings": {
-          "checkout_behavior": "add_to_cart",
-          "loading_message": "Loading bundle...",
-          "loading_icon": "spinner"
-        }
+        "settings": {}
       }
     },
     "color_schemes": {
